@@ -10,12 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/charts": "^7.13.2",
     "@mantine/core": "7.13.0",
     "@mantine/hooks": "7.13.0",
+    "@tabler/icons-react": "^3.19.0",
+    "@tanstack/react-query": "^5.59.0",
+    "@tanstack/react-router": "^1.58.16",
+    "@tanstack/router-zod-adapter": "^1.63.2",
+    "date-fns": "^4.1.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@tanstack/router-devtools": "^1.58.16",
+    "@tanstack/router-plugin": "^1.58.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
