@@ -1,5 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { getBird, getBirds } from "../requests/birdRequests";
+import {
+  getBird,
+  getBirds,
+  getWeightsWithinDateRange as getWeightsWithinTimeFrame,
+} from "../requests/birdRequests";
 
 export const useGetBirds = () => {
   return useQuery({
@@ -12,5 +16,11 @@ export const useGetBird = (birdId: string) => {
   return useQuery({
     queryKey: ["birds", birdId],
     queryFn: () => getBird(birdId),
+  });
+};
+export const useGetWeightsWithinTimeFrame = (birdId: string, wvt: string) => {
+  return useQuery({
+    queryKey: ["birds", birdId],
+    queryFn: () => getWeightsWithinTimeFrame(birdId, wvt),
   });
 };

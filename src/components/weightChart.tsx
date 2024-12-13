@@ -1,5 +1,9 @@
 import { addDays, differenceInDays, format, startOfDay } from "date-fns";
-import { AreaChart, getFilteredChartTooltipPayload } from "@mantine/charts";
+import {
+  AreaChart,
+  getFilteredChartTooltipPayload,
+  LineChart,
+} from "@mantine/charts";
 import { Button, Center, Flex, Paper, Stack, Text } from "@mantine/core";
 import { GraphTimelineButtonGroup } from "./graphTimelineButtonGroup";
 import { Weight } from "../api/schema/weights";
@@ -27,6 +31,39 @@ function ChartTooltip({ label, payload }: ChartTooltipProps) {
     </Paper>
   );
 }
+
+export const data = [
+  {
+    date: "Mar 22",
+    Apples: 2890,
+    Oranges: 2338,
+    Tomatoes: 2452,
+  },
+  {
+    date: "Mar 23",
+    Apples: 2756,
+    Oranges: 2103,
+    Tomatoes: 2402,
+  },
+  {
+    date: "Mar 24",
+    Apples: 3322,
+    Oranges: 986,
+    Tomatoes: 1821,
+  },
+  {
+    date: "Mar 25",
+    Apples: 3470,
+    Oranges: 2108,
+    Tomatoes: 2809,
+  },
+  {
+    date: "Mar 26",
+    Apples: 3129,
+    Oranges: 1726,
+    Tomatoes: 2290,
+  },
+];
 
 export default function WeightChart({
   chartData,
@@ -73,25 +110,16 @@ export default function WeightChart({
             </Text>
             <GraphTimelineButtonGroup valKey={"wvt"} />
           </Flex>
-          <AreaChart
+          <LineChart
             h={300}
-            data={formattedChartData.reverse()}
-            xAxisLabel="Date"
-            yAxisLabel="Weight"
-            series={[{ name: "weight", color: "indigo.6" }]}
+            data={data}
+            dataKey="date"
+            series={[
+              { name: "Apples", color: "indigo.6" },
+              { name: "Oranges", color: "blue.6" },
+              { name: "Tomatoes", color: "teal.6" },
+            ]}
             curveType="linear"
-            tickLine="x"
-            xAxisProps={{
-              ticks: customTicks,
-              tickFormatter: (value) => value,
-            }}
-            gridAxis="x"
-            tooltipProps={{
-              content: ({ label, payload }) => (
-                <ChartTooltip label={label} payload={payload} />
-              ),
-            }}
-            dataKey={"formattedDate"}
           />
         </Stack>
       </Center>

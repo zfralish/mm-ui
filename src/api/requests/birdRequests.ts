@@ -12,3 +12,13 @@ export const getBird = async (id: string): Promise<Bird> => {
 
   return await res.json();
 };
+export const getWeightsWithinDateRange = async (
+  id: string,
+  wvt: string,
+): Promise<Bird> => {
+  const res = await fetch(
+    `${Config.apiUrl}/weights/within-timeframe/${id}?timeframe=${wvt}`,
+  );
+
+  return await res.json();
+};
