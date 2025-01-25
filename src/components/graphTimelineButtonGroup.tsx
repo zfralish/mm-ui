@@ -1,11 +1,12 @@
 import { Button, Flex } from "@mantine/core";
 
-export const GraphTimelineButtonGroup = ({ valKey }: { valKey: string }) => {
+export const GraphTimelineButtonGroup = () => {
   const isSelected = (label: string) => {
+    console.log(label);
     return "filled";
   };
 
-  const onTimeFrameChange = (timeFrame: string) => {};
+  const onTimeFrameChange = (timeFrame: string) => {console.log(timeFrame);};
 
   return (
     <Flex justify={"flex-end"} gap={3} mb={15}>

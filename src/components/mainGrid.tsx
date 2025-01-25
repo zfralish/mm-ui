@@ -3,39 +3,44 @@ import { Grid, GridCol } from "@mantine/core";
 import BirdInfoCard from "./birdInfoCard";
 import WeightChart from "./weightChart";
 import DietChart from "./dietChart";
+import {DietBarChart} from "./dietBarChart.tsx";
+import {TotalQuarryRadialChart} from "./totalQuarryRadialChart.tsx";
+import {KillsAtWeightChart} from "./killsAtWeightChart.tsx";
 
 export default function MainGrid({
   birdId,
-  wvt,
 }: {
   birdId: string;
-  wvt: string;
 }) {
   // const chartData = await getWeightsWithinDateRange(birdId, wvt);
   // console.log(chartData);
 
   return (
-    <Grid align={"stretch"}>
+    <Grid>
       <GridCol span={4}>
         <BirdInfoCard birdId={birdId} />
       </GridCol>
-      <GridCol span={8}>
-        <WeightChart chartData={[]} wvt={wvt} />
+      <GridCol span={8} >
+        <WeightChart/>
+      </GridCol>
+
+      <GridCol span={3} >
+        <DietChart />
+      </GridCol>
+      <GridCol span={6} >
+        <DietBarChart/>
       </GridCol>
 
       <GridCol span={3}>
-        <DietChart />
+        <TotalQuarryRadialChart/>
       </GridCol>
-      <GridCol span={3}>2</GridCol>
-      <GridCol span={3}>3</GridCol>
+      <GridCol span={4}>
+        <DietBarChart/>
+      </GridCol>
+      <GridCol span={8}>
+        <KillsAtWeightChart/>
+      </GridCol>
 
-      <GridCol span={3}>1</GridCol>
-      <GridCol span={4}>2</GridCol>
-      <GridCol span={4}>3</GridCol>
-
-      <GridCol span={4}>1</GridCol>
-      <GridCol span={4}>2</GridCol>
-      <GridCol span={4}>3</GridCol>
     </Grid>
   );
 }
