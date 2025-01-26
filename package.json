@@ -19,6 +19,7 @@
     "@tanstack/react-router": "^1.97.3",
     "@tanstack/router-zod-adapter": "^1.81.5",
     "@types/node": "^22.10.7",
+    "ag-grid-react": "^33.0.4",
     "date-fns": "^4.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

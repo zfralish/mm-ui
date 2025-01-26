@@ -4,7 +4,7 @@ import {
   AppShell,
   AppShellHeader,
   AppShellMain,
-  Avatar,
+  Avatar, Box,
   Center,
   Divider,
   Flex,
@@ -110,8 +110,8 @@ function DashboardLayout() {
         </Stack>
       </AppShellHeader>
 
-      <AppShellMain>
-        <Outlet/>
+      <AppShellMain h={'100%'}>
+          <Outlet/>
       </AppShellMain>
     </AppShell>
   )

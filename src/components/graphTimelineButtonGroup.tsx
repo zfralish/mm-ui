@@ -2,7 +2,6 @@ import { Button, Flex } from "@mantine/core";
 
 export const GraphTimelineButtonGroup = () => {
   const isSelected = (label: string) => {
-    console.log(label);
     return "filled";
   };
 
